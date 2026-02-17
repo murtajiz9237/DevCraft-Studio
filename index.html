@@ -2,157 +2,297 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DevCraft Studio</title>
 
 <style>
+
+/* GLOBAL */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background: linear-gradient(to right,#dbeafe,#f0f9ff);
-    scroll-behavior:smooth;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
 }
 
-/* Header */
-header{
-    background:#0d6efd;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
-
-/* Navigation */
+/* NAVBAR */
 nav{
-    background:#222;
-    text-align:center;
-    padding:12px;
-}
-nav a{
-    color:white;
-    margin:0 20px;
-    text-decoration:none;
-    font-weight:bold;
-}
-nav a:hover{
-    color:#0d6efd;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter: blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
 }
 
-/* Sections */
+nav h2{
+color:#00eaff;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#00eaff;
+}
+
+/* SECTIONS */
 section{
-    padding:60px 20px;
-    text-align:center;
+min-height:100vh;
+padding:120px 10%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+animation:fade 1.5s ease;
 }
 
-img{
-    width:320px;
-    border-radius:12px;
-    box-shadow:0 0 15px gray;
+@keyframes fade{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
 }
 
-/* Button */
-button{
-    padding:12px 25px;
-    border:none;
-    background:#0d6efd;
-    color:white;
-    font-size:16px;
-    border-radius:6px;
-    cursor:pointer;
-}
-button:hover{
-    background:#084298;
+/* HERO */
+.hero{
+text-align:center;
 }
 
-/* Footer */
+.hero h1{
+font-size:3rem;
+color:#00eaff;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+line-height:1.8;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.07);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+background:rgba(255,255,255,0.15);
+}
+
+/* IMAGE */
+.center-img{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+.center-img img{
+width:320px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,255,255,0.4);
+}
+
+/* BUTTON */
+.btn{
+margin-top:30px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#00eaff;
+color:black;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+}
+
+/* FOOTER */
 footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:15px;
+text-align:center;
+padding:30px;
+background:black;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+section{
+padding:120px 7%;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>DevCraft Studio</h1>
-<p>Building Creative & Modern Websites</p>
-</header>
-
-<!-- MENU -->
+<!-- NAVBAR -->
 <nav>
-<a onclick="goHome()">Home</a>
-<a onclick="goAbout()">About</a>
-<a onclick="goServices()">Services</a>
-<a onclick="goContact()">Contact</a>
+<h2>DevCraft</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
 <!-- HOME -->
-<section id="home">
-<h2>Welcome to DevCraft Studio</h2>
+<section id="home" class="hero">
+
+<h1>Welcome to DevCraft Studio</h1>
+
 <p>
-DevCraft Studio is a professional web technology project website.
-This homepage demonstrates HTML structure, CSS styling,
-and JavaScript functionality for academic purposes.
+DevCraft Studio represents a modern vision of digital creativity, innovation, and technical excellence. This website has been professionally designed as a complete web technology assignment project that demonstrates the practical implementation of front-end development skills using structured markup, advanced styling, and interactive scripting. The purpose of this homepage is not only to present information but also to showcase a visually appealing interface, responsive layout, and clean design architecture that reflects real-world professional standards. 
+
+In today’s digital era, web development is more than simply writing code. It is a discipline that combines logic, creativity, design thinking, usability principles, and performance optimization. DevCraft Studio symbolizes this combination by presenting a unified platform where structure meets design and functionality meets aesthetics. The layout you are viewing is carefully organized to provide readability, accessibility, and responsiveness across devices including desktops, tablets, and smartphones. Modern gradients, glass-style panels, animation effects, and hover transitions are used to enhance user experience and create an engaging interface.
+
+This project demonstrates how simple technologies such as HTML, CSS, and JavaScript can be used together to produce a professional-level website without relying on heavy frameworks. Each section is structured semantically to maintain clarity while also allowing smooth navigation between pages through internal linking. The navigation bar at the top allows visitors to explore different sections seamlessly, which simulates the behavior of professional business websites. The goal of this project is educational as well as practical: to help learners understand how real websites are designed and how user-friendly layouts are constructed.
+
+By studying this project, students can observe how content hierarchy, spacing, color theory, typography, and interactive elements work together to create a complete digital experience. DevCraft Studio therefore stands as a demonstration platform, a learning resource, and a design showcase combined into a single modern webpage.
 </p>
 
-<img src="images/studio.jpg">
+<button class="btn" onclick="welcome()">Explore More</button>
 
-<br><br>
-<button onclick="showMessage()">Click Me</button>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<h2>About Us</h2>
+
+<h1>About DevCraft Studio</h1>
+
 <p>
-DevCraft Studio is a student project designed to showcase front-end
-development skills. It focuses on building modern, responsive,
-and clean websites using basic technologies.
+DevCraft Studio is a conceptual digital studio created as an academic project to demonstrate professional web design methodology. The main objective behind its creation is to illustrate how a well-structured website can be built from scratch using foundational web technologies while maintaining a clean layout, attractive appearance, and efficient performance. The studio concept represents a creative environment where ideas are transformed into functional digital interfaces through logical planning and structured coding techniques.
+
+The philosophy of DevCraft Studio revolves around simplicity, clarity, and innovation. Rather than using complex frameworks, this project focuses on core development principles so learners can clearly understand how each element contributes to the final result. Every section is intentionally designed with readability in mind, ensuring that text spacing, font size, and color contrast make the content easy to understand. The background gradients and subtle transparency effects are chosen to provide a modern aesthetic while still keeping the interface professional.
+
+Another purpose of this project is to demonstrate responsiveness. A responsive website automatically adapts its layout depending on the device screen size. This is an essential feature of modern websites because users access the internet from many different devices. In this project, flexible grids and media queries are used so that the design reorganizes itself on smaller screens. This ensures that content remains accessible and visually balanced regardless of device resolution.
+
+Furthermore, DevCraft Studio highlights the importance of user interaction. Interactive components such as buttons, hover effects, and animated transitions provide visual feedback that enhances usability. These features show how small design details can significantly improve the user experience. In real-world development environments, such details are considered essential for professional-quality interfaces.
+
+Overall, DevCraft Studio is not merely a sample webpage but a representation of the fundamental principles of web engineering, interface design, and digital presentation. It demonstrates how creativity and technical skills combine to build functional and visually impressive online platforms.
 </p>
+
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Our Services</h2>
-<p>We provide simple and creative solutions:</p>
-<ul style="list-style:none;">
-<li>Website Design</li>
-<li>Student Projects</li>
-<li>Frontend Development</li>
-<li>UI Layout Practice</li>
-</ul>
+
+<h1>Our Services</h1>
+
+<div class="cards">
+
+<div class="card">
+<h3>Website Design</h3>
+<p>We create visually appealing layouts using modern design principles, ensuring professional presentation and user-friendly navigation.</p>
+</div>
+
+<div class="card">
+<h3>Frontend Development</h3>
+<p>We build responsive interfaces using structured markup, advanced styling, and interactive scripting techniques.</p>
+</div>
+
+<div class="card">
+<h3>Student Projects</h3>
+<p>We assist learners in understanding concepts through practical examples and real project structures.</p>
+</div>
+
+<div class="card">
+<h3>UI Prototyping</h3>
+<p>We design interface prototypes that demonstrate layout planning, usability flow, and visual hierarchy.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+
+<h1>Project Features</h1>
+
+<p>
+This single-page website includes several modern features that reflect real professional development standards. Smooth scrolling navigation ensures seamless movement between sections without page reloads. Animated transitions create a dynamic feel while maintaining performance efficiency. The glass-style cards illustrate how transparency and blur effects can be used to produce elegant visual components. The responsive grid layout demonstrates how content automatically adjusts to screen sizes, maintaining readability and balance.
+
+The design also emphasizes accessibility and performance. Lightweight styling ensures that the page loads quickly, which is essential for user satisfaction and search engine optimization. Semantic sectioning improves structure and readability for both users and search engines. Interactive buttons demonstrate how JavaScript can enhance functionality by responding to user actions. Each component is intentionally minimal yet effective, proving that high-quality results can be achieved without unnecessary complexity.
+</p>
+
+<div class="center-img">
+<img src="images/studio.jpg">
+</div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>Contact Us</h2>
-<p>Email: devcraft@email.com</p>
-<p>Phone: +92 300 0000000</p>
+
+<h1>Contact Information</h1>
+
+<p>
+If this were a real digital studio, this section would allow clients and visitors to connect for collaboration, inquiries, or service requests. Contact sections are essential components of professional websites because they establish trust, credibility, and accessibility. A well-designed contact area usually includes communication channels such as email, phone number, social media links, or contact forms. These features ensure that users can easily reach the organization without confusion.
+
+For demonstration purposes, the following contact details are sample placeholders showing how such information is typically presented in a structured layout. The clean typography and centered arrangement make the information easy to read and visually balanced. In real projects, this section could be expanded to include a working form connected to a backend server or email service for real-time communication.
+</p>
+
+<br>
+
+<p>Email: contact@devcraftstudio.com</p>
+<p>Phone: +92 300 1234567</p>
+<p>Location: Digital Innovation Workspace</p>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-<p>© 2026 DevCraft Studio</p>
+© 2026 DevCraft Studio — Professional Web Technology Project
 </footer>
 
 <script>
-function goHome(){
-document.getElementById("home").scrollIntoView();
-}
-
-function goAbout(){
-document.getElementById("about").scrollIntoView();
-}
-
-function goServices(){
-document.getElementById("services").scrollIntoView();
-}
-
-function goContact(){
-document.getElementById("contact").scrollIntoView();
-}
-
-function showMessage(){
+function welcome(){
 alert("Welcome to DevCraft Studio 🚀");
 }
 </script>
