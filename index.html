@@ -8,7 +8,8 @@
 body{
     font-family: Arial, sans-serif;
     margin:0;
-    background:#f4f7fb;
+    background: linear-gradient(to right,#dbeafe,#f0f9ff);
+    scroll-behavior:smooth;
 }
 
 /* Header */
@@ -23,11 +24,11 @@ header{
 nav{
     background:#222;
     text-align:center;
-    padding:10px;
+    padding:12px;
 }
 nav a{
     color:white;
-    margin:0 15px;
+    margin:0 20px;
     text-decoration:none;
     font-weight:bold;
 }
@@ -35,16 +36,16 @@ nav a:hover{
     color:#0d6efd;
 }
 
-/* Section */
-.container{
-    padding:30px;
+/* Sections */
+section{
+    padding:60px 20px;
     text-align:center;
 }
 
 img{
-    width:350px;
-    border-radius:10px;
-    box-shadow:0 0 10px gray;
+    width:320px;
+    border-radius:12px;
+    box-shadow:0 0 15px gray;
 }
 
 /* Button */
@@ -67,7 +68,6 @@ footer{
     color:white;
     text-align:center;
     padding:15px;
-    margin-top:30px;
 }
 </style>
 </head>
@@ -79,49 +79,81 @@ footer{
 <p>Building Creative & Modern Websites</p>
 </header>
 
+<!-- MENU -->
 <nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
+<a onclick="goHome()">Home</a>
+<a onclick="goAbout()">About</a>
+<a onclick="goServices()">Services</a>
+<a onclick="goContact()">Contact</a>
 </nav>
 
-<div class="container">
-
+<!-- HOME -->
+<section id="home">
 <h2>Welcome to DevCraft Studio</h2>
-
 <p>
-DevCraft Studio is a professional web technology learning project website.
-This homepage demonstrates structured layout, styling, and interactivity
-using HTML, CSS, and scripting. It is designed as an academic assignment
-project to showcase front-end development skills.
+DevCraft Studio is a professional web technology project website.
+This homepage demonstrates HTML structure, CSS styling,
+and JavaScript functionality for academic purposes.
 </p>
 
-<h3>Our Studio</h3>
-
-<img src="images/studio.jpg" alt="Studio Image">
+<img src="images/studio.jpg">
 
 <br><br>
-
-<p>Visit our learning resource website:</p>
-
-<a href="https://www.w3schools.com" target="_blank">
-<button>Open Learning Site</button>
-</a>
-
-<br><br>
-
 <button onclick="showMessage()">Click Me</button>
+</section>
 
-</div>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p>
+DevCraft Studio is a student project designed to showcase front-end
+development skills. It focuses on building modern, responsive,
+and clean websites using basic technologies.
+</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<p>We provide simple and creative solutions:</p>
+<ul style="list-style:none;">
+<li>Website Design</li>
+<li>Student Projects</li>
+<li>Frontend Development</li>
+<li>UI Layout Practice</li>
+</ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Email: devcraft@email.com</p>
+<p>Phone: +92 300 0000000</p>
+</section>
 
 <footer>
-<p>© 2026 DevCraft Studio | All Rights Reserved</p>
+<p>© 2026 DevCraft Studio</p>
 </footer>
 
 <script>
+function goHome(){
+document.getElementById("home").scrollIntoView();
+}
+
+function goAbout(){
+document.getElementById("about").scrollIntoView();
+}
+
+function goServices(){
+document.getElementById("services").scrollIntoView();
+}
+
+function goContact(){
+document.getElementById("contact").scrollIntoView();
+}
+
 function showMessage(){
-    alert("Welcome to DevCraft Studio Website 🚀");
+alert("Welcome to DevCraft Studio 🚀");
 }
 </script>
 
